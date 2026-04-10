@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>타겟 기업 채용 요건 정리</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans KR', -apple-system, sans-serif;
+    background: #0f0f0f;
+    color: #e0e0e0;
+    line-height: 1.7;
+    padding: 40px 20px;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 40px;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border-radius: 16px;
+    border: 1px solid #2a2a4a;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+
+  .header .subtitle {
+    font-size: 0.95rem;
+    color: #8892b0;
+  }
+
+  .header .my-domain {
+    margin-top: 16px;
+    padding: 12px 20px;
+    background: rgba(100, 255, 218, 0.08);
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    border-radius: 8px;
+    color: #64ffda;
+    font-size: 0.85rem;
+  }
+
+  /* Summary Cards */
+  .summary-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .summary-card {
+    background: #1a1a2e;
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid #2a2a4a;
+  }
+
+  .summary-card h3 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #8892b0;
+    margin-bottom: 8px;
+  }
+
+  .summary-card .value {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #64ffda;
+  }
+
+  .summary-card .desc {
+    font-size: 0.8rem;
+    color: #6a7490;
+    margin-top: 4px;
+  }
+
+  /* Section */
+  .section {
+    margin-bottom: 48px;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ccd6f6;
+    margin-bottom: 6px;
+    padding-left: 16px;
+    border-left: 4px solid #64ffda;
+  }
+
+  .section-desc {
+    font-size: 0.85rem;
+    color: #6a7490;
+    margin-bottom: 20px;
+    padding-left: 20px;
+  }
+
+  /* Company Card */
+  .company-card {
+    background: #1a1a2e;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #2a2a4a;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+
+  .company-card:hover {
+    border-color: #3a3a5a;
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    cursor: pointer;
+  }
+
+  .card-header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .company-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #e6f1ff;
+  }
+
+  .relevance {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .relevance.high { background: rgba(100, 255, 218, 0.15); color: #64ffda; }
+  .relevance.mid { background: rgba(255, 200, 87, 0.15); color: #ffc857; }
+  .relevance.low { background: rgba(136, 146, 176, 0.15); color: #8892b0; }
+
+  .badges {
+    display: flex;
+    gap: 8px;
+  }
+
+  .badge {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    font-weight: 500;
+  }
+
+  .badge.confirmed { background: rgba(100, 255, 218, 0.1); color: #64ffda; border: 1px solid rgba(100, 255, 218, 0.2); }
+  .badge.estimated { background: rgba(255, 200, 87, 0.1); color: #ffc857; border: 1px solid rgba(255, 200, 87, 0.2); }
+  .badge.coding { background: rgba(187, 134, 252, 0.1); color: #bb86fc; border: 1px solid rgba(187, 134, 252, 0.2); }
+  .badge.nocoding { background: rgba(136, 146, 176, 0.08); color: #6a7490; border: 1px solid rgba(136, 146, 176, 0.15); }
+
+  .card-body {
+    padding: 0 24px 20px;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .info-item {
+    background: rgba(15, 15, 15, 0.5);
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+
+  .info-item.full {
+    grid-column: 1 / -1;
+  }
+
+  .info-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #6a7490;
+    margin-bottom: 6px;
+  }
+
+  .info-value {
+    font-size: 0.85rem;
+    color: #ccd6f6;
+    line-height: 1.6;
+  }
+
+  .info-value strong {
+    color: #64ffda;
+  }
+
+  .info-value .warn {
+    color: #ffc857;
+  }
+
+  .jobs-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .job-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    background: rgba(100, 255, 218, 0.06);
+    border: 1px solid rgba(100, 255, 218, 0.12);
+    border-radius: 6px;
+    font-size: 0.75rem;
+    color: #a8b2d1;
+  }
+
+  .job-tag.match {
+    background: rgba(100, 255, 218, 0.12);
+    border-color: rgba(100, 255, 218, 0.3);
+    color: #64ffda;
+    font-weight: 500;
+  }
+
+  .relevance-reason {
+    font-size: 0.8rem;
+    color: #8892b0;
+    padding: 10px 14px;
+    background: rgba(100, 255, 218, 0.04);
+    border-left: 3px solid #64ffda;
+    border-radius: 0 6px 6px 0;
+    margin-top: 8px;
+  }
+
+  /* Bottom Summary */
+  .bottom-summary {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border-radius: 16px;
+    padding: 32px;
+    border: 1px solid #2a2a4a;
+    margin-top: 48px;
+  }
+
+  .bottom-summary h2 {
+    font-size: 1.2rem;
+    color: #e6f1ff;
+    margin-bottom: 20px;
+  }
+
+  .checklist {
+    list-style: none;
+  }
+
+  .checklist li {
+    padding: 8px 0;
+    font-size: 0.9rem;
+    color: #a8b2d1;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .checklist li::before {
+    content: ">";
+    color: #64ffda;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .checklist li strong {
+    color: #e6f1ff;
+  }
+
+  /* Priority Ranking */
+  .priority-list {
+    display: grid;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .priority-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    background: rgba(15, 15, 15, 0.3);
+    border-radius: 8px;
+  }
+
+  .priority-rank {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .priority-rank.gold { background: rgba(100, 255, 218, 0.2); color: #64ffda; }
+  .priority-rank.silver { background: rgba(255, 200, 87, 0.15); color: #ffc857; }
+  .priority-rank.bronze { background: rgba(136, 146, 176, 0.12); color: #8892b0; }
+
+  .priority-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #ccd6f6;
+    min-width: 140px;
+  }
+
+  .priority-reason {
+    font-size: 0.8rem;
+    color: #6a7490;
+  }
+
+  .footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    color: #3a3a5a;
+    font-size: 0.75rem;
+  }
+
+  .divider {
+    height: 1px;
+    background: #2a2a4a;
+    margin: 24px 0;
+  }
+
+  /* Print Styles */
+  @media print {
+    body { background: #fff; color: #222; padding: 20px; font-size: 10pt; }
+    .container { max-width: 100%; }
+    .header { background: #f0f2f5; border: 1px solid #ddd; }
+    .header h1 { color: #111; }
+    .header .subtitle { color: #666; }
+    .header .my-domain { background: #e8f5e9; border-color: #a5d6a7; color: #2e7d32; }
+    .summary-card { background: #f8f9fa; border: 1px solid #ddd; }
+    .summary-card h3 { color: #666; }
+    .summary-card .value { color: #0d47a1; }
+    .company-card { background: #fff; border: 1px solid #ddd; break-inside: avoid; }
+    .company-name { color: #111; }
+    .section-title { color: #111; border-left-color: #0d47a1; }
+    .info-item { background: #f8f9fa; }
+    .info-label { color: #666; }
+    .info-value { color: #222; }
+    .info-value strong { color: #0d47a1; }
+    .relevance.high { background: #e8f5e9; color: #2e7d32; }
+    .relevance.mid { background: #fff8e1; color: #f57f17; }
+    .relevance.low { background: #f5f5f5; color: #666; }
+    .bottom-summary { background: #f0f2f5; border: 1px solid #ddd; }
+    .bottom-summary h2 { color: #111; }
+    .checklist li { color: #333; }
+    .checklist li::before { color: #0d47a1; }
+    .checklist li strong { color: #111; }
+    .relevance-reason { background: #f0f7f4; border-left-color: #2e7d32; color: #333; }
+    .job-tag { background: #f0f2f5; border-color: #ddd; color: #333; }
+    .job-tag.match { background: #e8f5e9; border-color: #a5d6a7; color: #2e7d32; }
+    .badge.confirmed { background: #e8f5e9; color: #2e7d32; border-color: #a5d6a7; }
+    .badge.estimated { background: #fff8e1; color: #f57f17; border-color: #ffe082; }
+    .badge.coding { background: #f3e5f5; color: #7b1fa2; border-color: #ce93d8; }
+  }
+
+  @media (max-width: 768px) {
+    .summary-row { grid-template-columns: 1fr; }
+    .info-grid { grid-template-columns: 1fr; }
+    .badges { flex-wrap: wrap; }
+    .card-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <h1>타겟 기업 채용 요건 정리</h1>
+    <div class="subtitle">2026.04 기준 | 17개 기업 | 27년 8월 졸업예정자 공채 목표</div>
+    <div class="my-domain">
+      내 도메인: AI / 신호처리 &mdash; RSGAN, 딥페이크 음성탐지(이중 파이프라인), 배터리 열폭주 탐지(VAE+DNN), Trustworthy AI(Bayesian), KRIT 국방과제
+    </div>
+  </div>
+
+  <!-- Summary Cards -->
+  <div class="summary-row">
+    <div class="summary-card">
+      <h3>어학 목표</h3>
+      <div class="value">토익 800 + OPIc IH</div>
+      <div class="desc">이 조합이면 18개 전부 커버</div>
+    </div>
+    <div class="summary-card">
+      <h3>코테 필요 기업</h3>
+      <div class="value">10 / 17개</div>
+      <div class="desc">실버3~2 목표 유지 필수</div>
+    </div>
+    <div class="summary-card">
+      <h3>도메인 직결 기업</h3>
+      <div class="value">4개 (최우선)</div>
+      <div class="desc">LIG넥스원, 한화시스템방산, 한컴인텔리전스, 퍼스텍</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- TIER 1 -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">1차 타겟 &mdash; 도메인 직결 + 현실적</div>
+    <div class="section-desc">신호처리/국방 AI 경험이 직접 먹히는 기업. 자소서 가장 먼저 써야 할 곳.</div>
+
+    <!-- LIG넥스원 -->
+    <div class="company-card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <span class="company-name">LIG넥스원</span>
+          <span class="relevance high">&#9733;&#9733;&#9733; 직결</span>
+        </div>
+        <div class="badges">
+          <span class="badge confirmed">어학 확인됨</span>
+          <span class="badge coding">코테 O</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">어학 기준</div>
+            <div class="info-value">
+              TOEIC <strong>600</strong> / 토스 <strong>110</strong> / OPIc <strong>IM</strong> 이상 (최소컷)<br>
+              <span class="warn">단, 최소컷만 넘기면 되는 게 아님 &mdash; 점수 높을수록 유리</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">채용 전형</div>
+            <div class="info-value">
+              서류 &rarr; AI역량검사 &rarr; <strong>SW코딩테스트</strong> &rarr; 실무면접 &rarr; 리더면접
+            </div>
+          </div>
+          <div class="info-item full">
+            <div class="info-label">모집 직무 (SW/AI 관련)</div>
+            <div class="jobs-list">
+              <span class="job-tag match">AI</span>
+              <span class="job-tag match">레이다 SW</span>
+              <span class="job-tag match">전자기전 SW</span>
+              <span class="job-tag match">미사일시스템 SW</span>
+              <span class="job-tag">해양 SW</span>
+              <span class="job-tag">무인/로봇 SW</span>
+              <span class="job-tag">광정보융합 SW</span>
+              <span class="job-tag">위성 SW</span>
+              <span class="job-tag">사업관리</span>
+              <span class="job-tag">품질관리</span>
+            </div>
+          </div>
+        </div>
+        <div class="relevance-reason">
+          <strong>연결 포인트:</strong> KRIT 국방과제(신호처리 AI) 경험 직접 어필. 레이다/전자기전/AI 부서에 RSGAN 파이프라인, 신호 복원 연구 연결. 세자릿수 대규모 채용으로 기회 많음.
+        </div>
+      </div>
+    </div>
+
+    <!-- 한화시스템 방산 -->
+    <div class="company-card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <span class="company-name">한화시스템 방산</span>
+          <span class="relevance high">&#9733;&#9733;&#9733; 직결</span>
+        </div>
+        <div class="badges">
+          <span class="badge estimated">어학 추정</span>
+          <span class="badge coding">코테 O</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">어학 기준</div>
+            <div class="info-value">
+              토스 또는 OPIc <strong>보유 필수</strong> (ICT 기준 동일 추정)<br>
+              최소 점수 없음. 2년 이내 유효 성적
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">채용 전형</div>
+            <div class="info-value">
+              서류 &rarr; 코딩테스트 &rarr; 면접 (방산/ICT 통합 세자릿수 규모)
+            </div>
+          </div>
+          <div class="info-item full">
+            <div class="info-label">모집 직무</div>
+            <div class="jobs-list">
+              <span class="job-tag match">R&D (대공방어체계)</span>
+              <span class="job-tag match">AI/빅데이터 기반 IT시스템 개발</span>
+              <span class="job-tag match">감시정찰 시스템</span>
+              <span class="job-tag">우주 시스템</span>
+              <span class="job-tag">해양 시스템</span>
+              <span class="job-tag">MRO(유지보수)</span>
+              <span class="job-tag">경영지원</span>
+            </div>
+          </div>
+        </div>
+        <div class="relevance-reason">
+          <strong>연결 포인트:</strong> 감시정찰/전자전 AI 직결. 딥페이크 음성탐지 이중 파이프라인의 신호 분석 역량, Trustworthy AI(불확실성 정량화) → 방산 신뢰성 요구사항에 직접 연결.
+        </div>
+      </div>
+    </div>
+
+    <!-- 한컴인텔리전스 -->
+    <div class="company-card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <span class="company-name">한컴인텔리전스</span>
+          <span class="relevance high">&#9733;&#9733;&#9733; 직결</span>
+        </div>
+        <div class="badges">
+          <span class="badge estimated">정보 제한적</span>
+          <span class="badge nocoding">코테 미확인</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">어학 기준</div>
+            <div class="info-value">
+              별도 어학 기준 <strong>미확인</strong><br>
+              중견기업이라 대기업 대비 낮을 가능성
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">기업 정보</div>
+            <div class="info-value">
+              한컴그룹 방산 자회사<br>
+              국방 감시정찰 AI, 영상/신호 분석 전문<br>
+              <strong>학교 필터 거의 없음</strong>
+            </div>
+          </div>
+          <div class="info-item full">
+            <div class="info-label">주요 사업 영역</div>
+            <div class="jobs-list">
+              <span class="job-tag match">국방 감시정찰 AI</span>
+              <span class="job-tag match">영상 분석 AI</span>
+              <span class="job-tag match">신호 분석</span>
+              <span class="job-tag">C4I 시스템</span>
+              <span class="job-tag">방산 솔루션</span>
+            </div>
+          </div>
+        </div>
+        <div class="relevance-reason">
+          <strong>연결 포인트:</strong> 도메인 100% 일치. 신호/영상 AI가 핵심 사업. 중견이라 학교 필터 약함 → 실력으로 승부 가능. 공고 뜨면 즉시 지원 추천.
+        </div>
+      </div>
+    </div>
+
+    <!-- 퍼스텍 -->
+    <div class="company-card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <span class="company-name">퍼스텍</span>
+          <span class="relevance high">&#9733;&#9733;&#9733; 직결</span>
+        </div>
+        <div class="badges">
+          <span class="badge estimated">정보 제한적</span>
+          <span class="badge nocoding">코테 미확인</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">어학 기준</div>
+            <div class="info-value">별도 어학 기준 <strong>미확인</strong></div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">연봉</div>
+            <div class="info-value">
+              초봉 <strong>~4,600만</strong> / 평균 <strong>~5,900만</strong><br>
+              (캐치 기준 평균 6,900만)
+            </div>
+          </div>
+          <div class="info-item full">
+            <div class="info-label">모집 직무</div>
+            <div class="jobs-list">
+              <span class="job-tag match">연구개발 SW</span>
+              <span class="job-tag match">전자전 장비</span>
+              <span class="job-tag match">레이다 신호처리</span>
+              <span class="job-tag">연구개발 전자</span>
+              <span class="job-tag">연구개발 기계</span>
+            </div>
+          </div>
+        </div>
+        <div class="relevance-reason">
+          <strong>연결 포인트:</strong> 전자전/레이다 신호처리 = KRIT 연구 도메인 완벽 일치. 1975년 창사 방산 전문 중견기업. 규모는 작지만 도메인 적합도 최상.
+        </div>
+      </div>
+    </div>
+
+    <!-- 쎄트렉아이 -->
+    <div class="company-card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <span class="company-name">쎄트렉아이</span>
+          <span class="relevance mid">&#9733;&#9733;&#9734; 높음</span>
+        </div>
+        <div class="badges">
+          <span class="badge estimated">어학 미확인</span>
+          <span class="badge nocoding">코테 미확인</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">어학 기준</div>
+            <div class="info-value">별도 어학 기준 <strong>미확인</strong>. 기술면접 중심 추정</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">채용 전형</div>
+            <div class="info-value">SI Future-Ship 프로그램 (신입 전용)</div>
+          </div>
+          <div class="info-item full">
+            <div class="info-label">모집 직무</div>
+            <div class="jobs-list">
+              <span class="job-tag match">SW - 방산부문</span>
+              <span class="job-tag match">SW - 우주부문</span>
+              <span class="job-tag">SW - 지상부문</span>
+              <span class="job-tag">SW 임베디드/테스트 (학사)</span>
+              <span class="job-tag">SW 비행제어 (석사)</span>
+              <span class="job-tag">HW(전자) - 우주/방산</span>
+              <span class="job-tag">SE - 우주/방산</span>
+            </div>
+          </div>
+        </div>
+        <div class="relevance-reason">
+          <strong>연결 포인트:</strong> 위성 영상처리 AI + 방산 SW. CNN/영상처리 경험 연결 가능. 배터리 열폭주 탐지의 센서 데이터 분석 역량도 어필 포인트.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- TIER 2 -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">2차 타겟 &mdash; 한화그룹 계열 + AI 활용</div>
+    <div class="section-desc">AI 역량을 활용할 수 있지만 도메인이 살짝 다른 기업.</div>
+
+    <!-- 한화시스템 ICT -->
+    <div class="company-card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <span class="company-name">한화시스템 ICT</span>
+          <span class="relevance mid">&#9733;&#9733;&#9734; 높음</span>
+        </div>
+        <div class="badges">
+          <span class="badge confirmed">어학 확인됨</span>
+          <span class="badge coding">코테 O</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">어학 기준</div>
+            <div class="info-value">
+              <strong>토스 또는 OPIc 보유 필수</strong>, 최소점수 없음<br>
+              토익만으로는 지원 불가! 반드시 Speaking 성적 필요
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">모집 직무</div>
+            <div class="jobs-list">
+              <span class="job-tag">IT서비스/ERP 개발</span>
+              <span class="job-tag">시스템 인프라 구축</span>
+              <span class="job-tag">운영</span>
+              <span class="job-tag">구매</span>
+            </div>
+          </div>
+        </div>
+        <div class="relevance-reason">
+          AI 활용은 있으나 방산 직접 도메인은 아님. 한화시스템 방산과 병행 지원 가능한 백업.
+        </div>
+      </div>
+    </div>
+
+    <!-- 한화오션 AX -->
+    <div class="company-card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <span class="company-name">한화오션 AX</span>
+          <span class="relevance mid">&#9733;&#9733;&#9734; 높음</span>
+        </div>
+        <div class="badges">
+          <span class="badge confirmed">어학 확인됨</span>
+          <span class="badge nocoding">코테 미확인</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">어학 기준</div>
+            <div class="info-value">
+              OPIc <strong>IH 이상 우대</strong> (필수 아님)<br>
+              Global Challenger 전형 별도 운영
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">채용 전형</div>
+            <div class="info-value">
+              서류 &rarr; 1차 면접(비대면) &rarr; 2차 면접(대면) &rarr; 입사<br>
+              <strong>코테 없을 가능성 높음</strong>
+            </div>
+          </div>
+          <div class="info-item full">
+            <div class="info-label">모집 직무</div>
+            <div class="jobs-list">
+              <span class="job-tag match">AI 개발</span>
+              <span class="job-tag">로보틱스</span>
+              <span class="job-tag">자동화 개발</span>
+              <span class="job-tag">설계</span>
+              <span class="job-tag">연구개발</span>
+              <span class="job-tag">사업관리</span>
+            </div>
+          </div>
+        </div>
+        <div class="relevance-reason">
+          AX(AI Transformation) 신설 직군. 조선 도메인이지만 AI 역량 자체를 평가. 서울 근무. 코테 없으면 서류+면접 승부.
+        </div>
+      </div>
+    </div>
+
+    <!-- 한화비전 -->
+    <div class="company-card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <span class="company-name">한화비전</span>
+          <span class="relevance mid">&#9733;&#9733;&#9734; 높음</span>
+        </div>
+        <div class="badges">
+          <span class="badge estimated">어학 추정</span>
+          <span class="badge coding">코테 O</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">어학 기준</div>
+            <div class="info-value">한화그룹 공통 (토스/OPIc 보유 추정)</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">연봉</div>
+            <div class="info-value">평균 <strong>~6,288만</strong></div>
+          </div>
+          <div class="info-item full">
+            <div class="info-label">모집 직무</div>
+            <div class="jobs-list">
+              <span class="job-tag match">AI 연구원</span>
+              <span class="job-tag match">컴퓨터비전</span>
+              <span class="job-tag">회로설계</span>
+              <span class="job-tag">사업전략</span>
+              <span class="job-tag">SCM</span>
+              <span class="job-tag">영업기획</span>
+              <span class="job-tag">품질보증</span>
+              <span class="job-tag">기술기획</span>
+            </div>
+          </div>
+        </div>
+        <div class="relevance-reason">
+          영상보안 AI 특화. CNN/딥러닝 + 딥페이크 탐지 경험의 "영상 신호 분석" 측면에서 연결 가능. 구 한화테크윈 보안사업부.
+        </div>
+      </div>
+    </div>
+
+    <!-- 한화에어로스페이스 -->
+    <div class="company-card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <span class="company-name">한화에어로스페이스</span>
+          <span class="relevance low">&#9733;&#9734;&#9734; 보통</span>
+        </div>
+        <div class="badges">
+          <span class="badge confirmed">어학 확인됨</span>
+          <span class="badge coding">코테 O (SW)</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">어학 기준</div>
+            <div class="info-value">
+              <strong>토스 또는 OPIc 보유 필수</strong><br>
+              영어 Speaking TEST 별도 실시 (합불 없음, 수준파악용)
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">채용 전형</div>
+            <div class="info-value">
+              서류 &rarr; 영어TEST &rarr; <strong>코딩테스트(SW)</strong> &rarr; 1차면접 &rarr; 2차면접<br>
+              인턴: 8주 인턴십 후 정규직 전환
+            </div>
+          </div>
+          <div class="info-item full">
+            <div class="info-label">모집 직무</div>
+            <div class="jobs-list">
+              <span class="job-tag">R&D_SW/컴퓨터공학</span>
+              <span class="job-tag">제조/생산기술</span>
+              <span class="job-tag">사업개발</span>
+              <span class="job-tag">경영관리</span>
+            </div>
+          </div>
+        </div>
+        <div class="relevance-reason">
+          방산 엔진/무기체계 중심. SW는 주로 임베디드/제어. AI보다 기계 중심이라 직무 연관성은 보통. 로봇/자율주행 확대 중이라 향후 가능성 있음.
+        </div>
+      </div>
+    </div>
+
+    <!-- 한화엔진 -->
+    <div class="company-card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <span class="company-name">한화엔진</span>
+          <span class="relevance low">&#9734;&#9734;&#9734; 낮음</span>
+        </div>
+        <div class="badges">
+          <span class="badge estimated">어학 추정</span>
+          <span class="badge nocoding">코테 미확인</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="info-grid">
+          <div class="info-item full">
+            <div class="info-label">비고</div>
+            <div class="info-value">
+              선박 엔진 제조 (구 HSD엔진). SW/AI 채용 규모 매우 작음.<br>
+              스마트팩토리/DT 관련 직무 가능성은 있으나 우선순위 낮음.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- TIER 3 -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-title">3차 타겟 &mdash; 대기업 백업</div>
+    <div class="section-desc">현대그룹, IT대기업 등. 도메인 거리는 있지만 규모/안정성 측면에서 백업.</div>
+
+    <!-- KAI -->
+    <div class="company-card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <span class="company-name">KAI (한국항공우주산업)</span>
+          <span class="relevance low">&#9733;&#9734;&#9734; 보통</span>
+        </div>
+        <div class="badges">
+          <span class="badge confirmed">어학 확인됨</span>
+          <span class="badge coding">코테 O</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">어학 기준</div>
+            <div class="info-value">공인영어 <strong>1개 이상 보유 필수</strong> (점수 기준 직무별 상이)</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">비고</div>
+            <div class="info-value">사천/진주 근무. 보안 신원조회 필수.</div>
+          </div>
+          <div class="info-item full">
+            <div class="info-label">모집 직무 (12개 부서)</div>
+            <div class="jobs-list">
+              <span class="job-tag">임무SW</span>
+              <span class="job-tag">항공전자</span>
+              <span class="job-tag">ICT</span>
+              <span class="job-tag">비행제어</span>
+              <span class="job-tag">IPS</span>
+              <span class="job-tag">생산관리</span>
+              <span class="job-tag">생산기술</span>
+              <span class="job-tag">전문연구요원</span>
+            </div>
+          </div>
+        </div>
+        <div class="relevance-reason">
+          항공기 SW는 임베디드/제어 중심. AI 직무 비중 낮음. 방산이라 도메인은 근접하나 직무 적합도는 보통.
+        </div>
+      </div>
+    </div>
+
+    <!-- 현대로템 -->
+    <div class="company-card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <span class="company-name">현대로템</span>
+          <span class="relevance low">&#9733;&#9734;&#9734; 보통</span>
+        </div>
+        <div class="badges">
+          <span class="badge estimated">어학 추정</span>
+          <span class="badge coding">코테 O</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">어학 기준</div>
+            <div class="info-value">현대그룹 공통 TOEIC <strong>700+</strong> 추정</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">채용 전형</div>
+            <div class="info-value">서류 &rarr; Job Fitness Test(인성/역량 + <strong>코딩테스트</strong>) &rarr; 면접</div>
+          </div>
+          <div class="info-item full">
+            <div class="info-label">AI/SW 직무</div>
+            <div class="jobs-list">
+              <span class="job-tag match">AI Engineer (디펜스솔루션)</span>
+              <span class="job-tag">응용SW 개발</span>
+              <span class="job-tag">전장시스템 개발</span>
+              <span class="job-tag">AI Multimodal Engineer (레일솔루션)</span>
+              <span class="job-tag">BSA 개발</span>
+            </div>
+          </div>
+        </div>
+        <div class="relevance-reason">
+          디펜스솔루션 AI Engineer 직무는 연관 있음. 다만 채용 규모 작고 임베디드 중심. 무인복합체계 쪽이면 어필 가능.
+        </div>
+      </div>
+    </div>
+
+    <!-- HD현대중공업 -->
+    <div class="company-card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <span class="company-name">HD현대중공업</span>
+          <span class="relevance low">&#9733;&#9734;&#9734; 보통</span>
+        </div>
+        <div class="badges">
+          <span class="badge confirmed">어학 확인됨</span>
+          <span class="badge nocoding">HMAT 위주</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">어학 기준</div>
+            <div class="info-value">토스 <strong>120</strong> / OPIc <strong>IM2</strong> 이상</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">비고</div>
+            <div class="info-value">조선·해양. 스마트십야드 DT 수요 증가 중이나 AI 직무 비중 낮음.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 현대오토에버 -->
+    <div class="company-card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <span class="company-name">현대오토에버</span>
+          <span class="relevance low">&#9733;&#9734;&#9734; 보통</span>
+        </div>
+        <div class="badges">
+          <span class="badge estimated">어학 추정</span>
+          <span class="badge coding">코테 O (SW 전원)</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">어학 기준</div>
+            <div class="info-value">현대그룹 공통 TOEIC <strong>700+</strong> 추정</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">채용 전형</div>
+            <div class="info-value">
+              서류 &rarr; ACT(온라인) + <strong>코딩테스트 (SW 전원 응시)</strong> &rarr; 1차면접(코테리뷰 포함) &rarr; 2차면접
+            </div>
+          </div>
+          <div class="info-item full">
+            <div class="info-label">비고</div>
+            <div class="info-value">현대차 IT 계열사. 클라우드, 커넥티드카 플랫폼. 도메인 다름.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 안랩 -->
+    <div class="company-card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <span class="company-name">안랩</span>
+          <span class="relevance low">&#9733;&#9734;&#9734; 보통</span>
+        </div>
+        <div class="badges">
+          <span class="badge estimated">어학 없음 추정</span>
+          <span class="badge coding">코테 O</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="info-grid">
+          <div class="info-item">
+            <div class="info-label">어학 기준</div>
+            <div class="info-value">별도 어학 기준 <strong>없음 추정</strong>. 기술 역량 중심.</div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">채용 전형</div>
+            <div class="info-value">서류 &rarr; <strong>코딩테스트</strong> &rarr; 1차면접 &rarr; 2차면접</div>
+          </div>
+          <div class="info-item full">
+            <div class="info-label">모집 직무 (10개)</div>
+            <div class="jobs-list">
+              <span class="job-tag match">AI 엔지니어링</span>
+              <span class="job-tag">Linux 개발</span>
+              <span class="job-tag">Windows 개발</span>
+              <span class="job-tag">Mac OS 개발</span>
+              <span class="job-tag">Web 개발</span>
+              <span class="job-tag">보안 분석</span>
+              <span class="job-tag">취약점 분석</span>
+              <span class="job-tag">디지털 포렌식</span>
+              <span class="job-tag">DevOps</span>
+              <span class="job-tag">QA</span>
+            </div>
+          </div>
+        </div>
+        <div class="relevance-reason">
+          AI 엔지니어링 직무 있지만 보안 도메인 경험 필요. 어학 부담 없는 게 장점.
+        </div>
+      </div>
+    </div>
+
+    <!-- 두산에너빌리티 -->
+    <div class="company-card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <span class="company-name">두산에너빌리티</span>
+          <span class="relevance low">&#9734;&#9734;&#9734; 낮음</span>
+        </div>
+        <div class="badges">
+          <span class="badge estimated">어학 추정</span>
+          <span class="badge nocoding">DCAT 위주</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="info-grid">
+          <div class="info-item full">
+            <div class="info-label">비고</div>
+            <div class="info-value">에너지·원전. 디지털트윈/IoT DT 수요 있으나 도메인 거리 멀음. Global Talent 전형.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 대한항공 -->
+    <div class="company-card">
+      <div class="card-header">
+        <div class="card-header-left">
+          <span class="company-name">대한항공</span>
+          <span class="relevance low">&#9734;&#9734;&#9734; 낮음</span>
+        </div>
+        <div class="badges">
+          <span class="badge confirmed">어학 확인됨</span>
+          <span class="badge nocoding">코테 미확인</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="info-grid">
+          <div class="info-item full">
+            <div class="info-label">비고</div>
+            <div class="info-value">
+              TOEIC <strong>550+</strong> / 토스 IM1 / OPIc IM1 이상 (2024 기준).<br>
+              항공 IT 시스템 개발 직군. 도메인 거리 멀고 AI 비중 낮음.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- Bottom Summary -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="bottom-summary">
+    <h2>지원 우선순위 (직무 연관성 기준)</h2>
+
+    <div class="priority-list">
+      <div class="priority-item">
+        <span class="priority-rank gold">1</span>
+        <span class="priority-name">LIG넥스원</span>
+        <span class="priority-reason">신호처리 AI 직결. KRIT 경험 직접 연결. 세자릿수 대규모 채용.</span>
+      </div>
+      <div class="priority-item">
+        <span class="priority-rank gold">2</span>
+        <span class="priority-name">한화시스템 방산</span>
+        <span class="priority-reason">감시정찰/전자전 AI. Trustworthy AI → 방산 신뢰성에 연결.</span>
+      </div>
+      <div class="priority-item">
+        <span class="priority-rank gold">3</span>
+        <span class="priority-name">한컴인텔리전스</span>
+        <span class="priority-reason">국방 감시정찰 AI. 학교 필터 없음. 도메인 100%.</span>
+      </div>
+      <div class="priority-item">
+        <span class="priority-rank gold">4</span>
+        <span class="priority-name">퍼스텍</span>
+        <span class="priority-reason">전자전/레이다 신호처리. 도메인 완벽 일치.</span>
+      </div>
+      <div class="priority-item">
+        <span class="priority-rank silver">5</span>
+        <span class="priority-name">한화비전</span>
+        <span class="priority-reason">영상 AI. CNN/딥러닝 경험 연결.</span>
+      </div>
+      <div class="priority-item">
+        <span class="priority-rank silver">6</span>
+        <span class="priority-name">쎄트렉아이</span>
+        <span class="priority-reason">위성 영상 AI + 방산 SW.</span>
+      </div>
+      <div class="priority-item">
+        <span class="priority-rank silver">7</span>
+        <span class="priority-name">한화시스템 ICT</span>
+        <span class="priority-reason">한화시스템 방산과 병행 지원 백업.</span>
+      </div>
+      <div class="priority-item">
+        <span class="priority-rank silver">8</span>
+        <span class="priority-name">한화오션 AX</span>
+        <span class="priority-reason">AI 신설 직군. 코테 없을 가능성. 서울 근무.</span>
+      </div>
+      <div class="priority-item">
+        <span class="priority-rank bronze">9</span>
+        <span class="priority-name">현대로템</span>
+        <span class="priority-reason">디펜스 AI Engineer 직무 있음.</span>
+      </div>
+      <div class="priority-item">
+        <span class="priority-rank bronze">10~</span>
+        <span class="priority-name">KAI, 안랩, HD현대, 현대오토에버, 한화에어로, 한화엔진, 두산, 대한항공</span>
+        <span class="priority-reason">백업군. 도메인 거리 있거나 AI 비중 낮음.</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h2>내가 준비해야 할 것</h2>
+    <ul class="checklist">
+      <li><strong>토익 800+</strong> &mdash; LIG넥스원 최소컷(600) 상회. HD현대(토스120/IM2) 등 대응. 높을수록 서류 유리</li>
+      <li><strong>OPIc IH</strong> &mdash; 한화오션 우대. 한화그룹 전체 토스/OPIc 필수 추세. IH면 전 기업 안전</li>
+      <li><strong>코테 실버3~2</strong> &mdash; 18개 중 11개가 코테 있음. 최소 실버3은 확보해야 함</li>
+      <li><strong>핵심:</strong> 토익 800 + OPIc IH 조합이면 <strong>17개 기업 전부 어학 요건 충족</strong></li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    최종 업데이트: 2026.04 | "확인됨"은 2025~2026 공고 기반, "추정"은 과거 공고/그룹 공통/커뮤니티 기반<br>
+    공채 시즌(2027.03~) 전에 각 기업 공고 확인 필요
+  </div>
+
+</div>
+</body>
+</html>
