@@ -11,8 +11,8 @@
 
   body {
     font-family: 'Noto Sans KR', -apple-system, sans-serif;
-    background: #0f0f0f;
-    color: #e0e0e0;
+    background: #f5f5f0;
+    color: #2d2d2d;
     line-height: 1.7;
     padding: 40px 20px;
   }
@@ -27,30 +27,31 @@
     text-align: center;
     margin-bottom: 50px;
     padding: 40px;
-    background: linear-gradient(135deg, #1a1a2e, #16213e);
-    border-radius: 16px;
-    border: 1px solid #2a2a4a;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
   }
 
   .header h1 {
     font-size: 2rem;
     font-weight: 900;
-    color: #fff;
+    color: #1a1a1a;
     margin-bottom: 12px;
   }
 
   .header .subtitle {
     font-size: 0.95rem;
-    color: #8892b0;
+    color: #888;
   }
 
   .header .my-domain {
     margin-top: 16px;
     padding: 12px 20px;
-    background: rgba(100, 255, 218, 0.08);
-    border: 1px solid rgba(100, 255, 218, 0.2);
+    background: #f0f4ff;
+    border: 1px solid #c7d2fe;
     border-radius: 8px;
-    color: #64ffda;
+    color: #3730a3;
     font-size: 0.85rem;
   }
 
@@ -63,29 +64,30 @@
   }
 
   .summary-card {
-    background: #1a1a2e;
-    border-radius: 12px;
+    background: #fff;
+    border-radius: 10px;
     padding: 24px;
-    border: 1px solid #2a2a4a;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
   }
 
   .summary-card h3 {
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #8892b0;
+    color: #888;
     margin-bottom: 8px;
   }
 
   .summary-card .value {
     font-size: 1.4rem;
     font-weight: 700;
-    color: #64ffda;
+    color: #1e40af;
   }
 
   .summary-card .desc {
     font-size: 0.8rem;
-    color: #6a7490;
+    color: #999;
     margin-top: 4px;
   }
 
@@ -97,31 +99,32 @@
   .section-title {
     font-size: 1.3rem;
     font-weight: 700;
-    color: #ccd6f6;
+    color: #1a1a1a;
     margin-bottom: 6px;
     padding-left: 16px;
-    border-left: 4px solid #64ffda;
+    border-left: 4px solid #4f46e5;
   }
 
   .section-desc {
     font-size: 0.85rem;
-    color: #6a7490;
+    color: #888;
     margin-bottom: 20px;
     padding-left: 20px;
   }
 
   /* Company Card */
   .company-card {
-    background: #1a1a2e;
-    border-radius: 12px;
+    background: #fff;
+    border-radius: 10px;
     margin-bottom: 16px;
-    border: 1px solid #2a2a4a;
+    border: 1px solid #e5e5e5;
     overflow: hidden;
-    transition: border-color 0.2s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    transition: box-shadow 0.2s;
   }
 
   .company-card:hover {
-    border-color: #3a3a5a;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   }
 
   .card-header {
@@ -141,7 +144,7 @@
   .company-name {
     font-size: 1.1rem;
     font-weight: 700;
-    color: #e6f1ff;
+    color: #1a1a1a;
   }
 
   .relevance {
@@ -152,9 +155,9 @@
     font-weight: 500;
   }
 
-  .relevance.high { background: rgba(100, 255, 218, 0.15); color: #64ffda; }
-  .relevance.mid { background: rgba(255, 200, 87, 0.15); color: #ffc857; }
-  .relevance.low { background: rgba(136, 146, 176, 0.15); color: #8892b0; }
+  .relevance.high { background: #dcfce7; color: #166534; }
+  .relevance.mid { background: #fef3c7; color: #92400e; }
+  .relevance.low { background: #f3f4f6; color: #6b7280; }
 
   .badges {
     display: flex;
@@ -168,10 +171,10 @@
     font-weight: 500;
   }
 
-  .badge.confirmed { background: rgba(100, 255, 218, 0.1); color: #64ffda; border: 1px solid rgba(100, 255, 218, 0.2); }
-  .badge.estimated { background: rgba(255, 200, 87, 0.1); color: #ffc857; border: 1px solid rgba(255, 200, 87, 0.2); }
-  .badge.coding { background: rgba(187, 134, 252, 0.1); color: #bb86fc; border: 1px solid rgba(187, 134, 252, 0.2); }
-  .badge.nocoding { background: rgba(136, 146, 176, 0.08); color: #6a7490; border: 1px solid rgba(136, 146, 176, 0.15); }
+  .badge.confirmed { background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+  .badge.estimated { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+  .badge.coding { background: #ede9fe; color: #5b21b6; border: 1px solid #ddd6fe; }
+  .badge.nocoding { background: #f3f4f6; color: #9ca3af; border: 1px solid #e5e7eb; }
 
   .card-body {
     padding: 0 24px 20px;
@@ -185,9 +188,10 @@
   }
 
   .info-item {
-    background: rgba(15, 15, 15, 0.5);
+    background: #fafaf8;
     border-radius: 8px;
     padding: 14px 16px;
+    border: 1px solid #f0f0ec;
   }
 
   .info-item.full {
@@ -198,22 +202,22 @@
     font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    color: #6a7490;
+    color: #999;
     margin-bottom: 6px;
   }
 
   .info-value {
     font-size: 0.85rem;
-    color: #ccd6f6;
+    color: #333;
     line-height: 1.6;
   }
 
   .info-value strong {
-    color: #64ffda;
+    color: #1e40af;
   }
 
   .info-value .warn {
-    color: #ffc857;
+    color: #b45309;
   }
 
   .jobs-list {
@@ -225,42 +229,43 @@
   .job-tag {
     display: inline-block;
     padding: 4px 10px;
-    background: rgba(100, 255, 218, 0.06);
-    border: 1px solid rgba(100, 255, 218, 0.12);
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
     border-radius: 6px;
     font-size: 0.75rem;
-    color: #a8b2d1;
+    color: #6b7280;
   }
 
   .job-tag.match {
-    background: rgba(100, 255, 218, 0.12);
-    border-color: rgba(100, 255, 218, 0.3);
-    color: #64ffda;
+    background: #eff6ff;
+    border-color: #bfdbfe;
+    color: #1e40af;
     font-weight: 500;
   }
 
   .relevance-reason {
     font-size: 0.8rem;
-    color: #8892b0;
+    color: #555;
     padding: 10px 14px;
-    background: rgba(100, 255, 218, 0.04);
-    border-left: 3px solid #64ffda;
+    background: #f8f9fa;
+    border-left: 3px solid #4f46e5;
     border-radius: 0 6px 6px 0;
     margin-top: 8px;
   }
 
   /* Bottom Summary */
   .bottom-summary {
-    background: linear-gradient(135deg, #1a1a2e, #16213e);
-    border-radius: 16px;
+    background: #fff;
+    border-radius: 12px;
     padding: 32px;
-    border: 1px solid #2a2a4a;
+    border: 1px solid #e5e5e5;
     margin-top: 48px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
   }
 
   .bottom-summary h2 {
     font-size: 1.2rem;
-    color: #e6f1ff;
+    color: #1a1a1a;
     margin-bottom: 20px;
   }
 
@@ -271,7 +276,7 @@
   .checklist li {
     padding: 8px 0;
     font-size: 0.9rem;
-    color: #a8b2d1;
+    color: #555;
     display: flex;
     align-items: flex-start;
     gap: 10px;
@@ -279,13 +284,13 @@
 
   .checklist li::before {
     content: ">";
-    color: #64ffda;
+    color: #4f46e5;
     font-weight: 700;
     flex-shrink: 0;
   }
 
   .checklist li strong {
-    color: #e6f1ff;
+    color: #1a1a1a;
   }
 
   /* Priority Ranking */
@@ -300,8 +305,9 @@
     align-items: center;
     gap: 12px;
     padding: 10px 16px;
-    background: rgba(15, 15, 15, 0.3);
+    background: #fafaf8;
     border-radius: 8px;
+    border: 1px solid #f0f0ec;
   }
 
   .priority-rank {
@@ -316,33 +322,33 @@
     flex-shrink: 0;
   }
 
-  .priority-rank.gold { background: rgba(100, 255, 218, 0.2); color: #64ffda; }
-  .priority-rank.silver { background: rgba(255, 200, 87, 0.15); color: #ffc857; }
-  .priority-rank.bronze { background: rgba(136, 146, 176, 0.12); color: #8892b0; }
+  .priority-rank.gold { background: #dcfce7; color: #166534; }
+  .priority-rank.silver { background: #fef3c7; color: #92400e; }
+  .priority-rank.bronze { background: #f3f4f6; color: #6b7280; }
 
   .priority-name {
     font-size: 0.9rem;
     font-weight: 500;
-    color: #ccd6f6;
+    color: #1a1a1a;
     min-width: 140px;
   }
 
   .priority-reason {
     font-size: 0.8rem;
-    color: #6a7490;
+    color: #888;
   }
 
   .footer {
     text-align: center;
     margin-top: 40px;
     padding: 20px;
-    color: #3a3a5a;
+    color: #bbb;
     font-size: 0.75rem;
   }
 
   .divider {
     height: 1px;
-    background: #2a2a4a;
+    background: #e5e5e5;
     margin: 24px 0;
   }
 
@@ -451,7 +457,20 @@
           <div class="info-item">
             <div class="info-label">채용 전형</div>
             <div class="info-value">
-              서류 &rarr; AI역량검사 &rarr; <strong>SW코딩테스트</strong> &rarr; 실무면접 &rarr; 리더면접
+              서류 &rarr; AI역량검사 &rarr; <strong>SW코딩테스트</strong> &rarr; <strong>1차 PT면접</strong>(프로젝트 발표 5분+QA) &rarr; <strong>2차 임원면접</strong>(인성)
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">연봉</div>
+            <div class="info-value">
+              초봉 <strong>~5,400만</strong> / 평균 <strong>~9,800만</strong>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">근무지</div>
+            <div class="info-value">
+              <strong>판교</strong>(SW/AI R&D 메인) · 용인(본사) · 대전 · 구미(생산)<br>
+              전문연구요원 <strong>가능</strong> (석사)
             </div>
           </div>
           <div class="info-item full">
@@ -471,7 +490,8 @@
           </div>
         </div>
         <div class="relevance-reason">
-          <strong>연결 포인트:</strong> KRIT 국방과제(신호처리 AI) 경험 직접 어필. 레이다/전자기전/AI 부서에 RSGAN 파이프라인, 신호 복원 연구 연결. 세자릿수 대규모 채용으로 기회 많음.
+          <strong>연결 포인트:</strong> KRIT 국방과제(신호처리 AI) 경험 직접 어필. 레이다/전자기전/AI 부서에 RSGAN 파이프라인, 신호 복원 연구 연결. 세자릿수 대규모 채용으로 기회 많음.<br>
+          <strong>면접 팁:</strong> 1차 PT면접에서 학부 프로젝트 PPT 발표. 확실히 아는 내용 위주로 준비. 무기체계 관심도/회사 주요 무기/경쟁사 파악 중요. 성실성·조직적합성·충성도를 가장 중시.
         </div>
       </div>
     </div>
@@ -484,7 +504,7 @@
           <span class="relevance high">&#9733;&#9733;&#9733; 직결</span>
         </div>
         <div class="badges">
-          <span class="badge estimated">어학 추정</span>
+          <span class="badge confirmed">어학 확인됨</span>
           <span class="badge coding">코테 O</span>
         </div>
       </div>
@@ -493,14 +513,29 @@
           <div class="info-item">
             <div class="info-label">어학 기준</div>
             <div class="info-value">
-              토스 또는 OPIc <strong>보유 필수</strong> (ICT 기준 동일 추정)<br>
-              최소 점수 없음. 2년 이내 유효 성적
+              <strong>토스 또는 OPIc 보유 필수</strong> (최소 점수 없음)<br>
+              2년 이내 유효 성적. 토익만으로는 지원 불가!
             </div>
           </div>
           <div class="info-item">
             <div class="info-label">채용 전형</div>
             <div class="info-value">
-              서류 &rarr; 코딩테스트 &rarr; 면접 (방산/ICT 통합 세자릿수 규모)
+              서류 &rarr; 코딩테스트 &rarr; <strong>1차 기술면접</strong>(자소서+프로젝트) &rarr; <strong>2차 인성면접</strong><br>
+              코테 난이도: 프로그래머스 2~3 수준
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">연봉</div>
+            <div class="info-value">
+              초봉 <strong>~5,300~5,500만</strong> (+성과급 500~1,500만)<br>
+              평균 <strong>~9,200만</strong>. 방산이 ICT보다 약간 높음
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">근무지</div>
+            <div class="info-value">
+              <strong>용인/판교/서현</strong> — 항공우주·레이다·전자광학·통신연구소<br>
+              <strong>구미</strong> — 해양연구소·양산개발·정비
             </div>
           </div>
           <div class="info-item full">
@@ -517,7 +552,8 @@
           </div>
         </div>
         <div class="relevance-reason">
-          <strong>연결 포인트:</strong> 감시정찰/전자전 AI 직결. 딥페이크 음성탐지 이중 파이프라인의 신호 분석 역량, Trustworthy AI(불확실성 정량화) → 방산 신뢰성 요구사항에 직접 연결.
+          <strong>연결 포인트:</strong> 감시정찰/전자전 AI 직결. 딥페이크 음성탐지 이중 파이프라인의 신호 분석 역량, Trustworthy AI(불확실성 정량화) → 방산 신뢰성 요구사항에 직접 연결.<br>
+          <strong>면접 팁:</strong> 1차에서 프로젝트 깊이 파고듦. 자소서에 쓴 기술/사업 내용 설명 준비 필수. 압박면접 있음.
         </div>
       </div>
     </div>
@@ -646,7 +682,8 @@
           </div>
         </div>
         <div class="relevance-reason">
-          <strong>연결 포인트:</strong> 위성 영상처리 AI + 방산 SW. CNN/영상처리 경험 연결 가능. 배터리 열폭주 탐지의 센서 데이터 분석 역량도 어필 포인트.
+          <strong>연결 포인트:</strong> 위성 영상처리 AI + 방산 SW. CNN/영상처리 경험 연결 가능. 배터리 열폭주 탐지의 센서 데이터 분석 역량도 어필 포인트.<br>
+          초봉 <strong>~4,800만</strong> / 평균 <strong>~7,500만</strong>. 근무지: <strong>대전 유성구</strong> (대덕특구). 평균 근속 6년.
         </div>
       </div>
     </div>
@@ -720,12 +757,24 @@
           <div class="info-item">
             <div class="info-label">채용 전형</div>
             <div class="info-value">
-              서류 &rarr; 1차 면접(비대면) &rarr; 2차 면접(대면) &rarr; 입사<br>
-              <strong>코테 없을 가능성 높음</strong>
+              서류 &rarr; <strong>AI면접</strong>(30분) &rarr; <strong>영어면접(AI)</strong> &rarr; <strong>PT면접(실무, 1:5)</strong> &rarr; 최종면접<br>
+              코테 없을 가능성 높음
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">연봉</div>
+            <div class="info-value">
+              초봉 <strong>~4,800만</strong> / 평균 <strong>~8,100~8,900만</strong>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-label">근무지</div>
+            <div class="info-value">
+              <strong>서울 중구</strong> (한화빌딩/그랜드센트럴)
             </div>
           </div>
           <div class="info-item full">
-            <div class="info-label">모집 직무</div>
+            <div class="info-label">모집 직무 (25개 직무 중 AI 관련)</div>
             <div class="jobs-list">
               <span class="job-tag match">AI 개발</span>
               <span class="job-tag">로보틱스</span>
@@ -737,7 +786,7 @@
           </div>
         </div>
         <div class="relevance-reason">
-          AX(AI Transformation) 신설 직군. 조선 도메인이지만 AI 역량 자체를 평가. 서울 근무. 코테 없으면 서류+면접 승부.
+          AX(AI Transformation) 신설 직군. 조선 도메인이지만 AI 역량 자체를 평가. <strong>서울 근무</strong>. AI면접+영어면접 별도 실시.
         </div>
       </div>
     </div>
@@ -761,8 +810,11 @@
             <div class="info-value">한화그룹 공통 (토스/OPIc 보유 추정)</div>
           </div>
           <div class="info-item">
-            <div class="info-label">연봉</div>
-            <div class="info-value">평균 <strong>~6,288만</strong></div>
+            <div class="info-label">연봉 / 근무지</div>
+            <div class="info-value">
+              초봉 <strong>~5,200만</strong> / 평균 <strong>~6,300만</strong><br>
+              근무지: <strong>성남 분당</strong>
+            </div>
           </div>
           <div class="info-item full">
             <div class="info-label">모집 직무</div>
@@ -823,7 +875,8 @@
           </div>
         </div>
         <div class="relevance-reason">
-          방산 엔진/무기체계 중심. SW는 주로 임베디드/제어. AI보다 기계 중심이라 직무 연관성은 보통. 로봇/자율주행 확대 중이라 향후 가능성 있음.
+          방산 엔진/무기체계 중심. SW는 주로 임베디드/제어. AI보다 기계 중심. 로봇/자율주행 확대 중.<br>
+          초봉 <strong>~6,300만</strong> / 평균 <strong>~12,400만</strong>. 근무지: 창원, 대전, 분당, 서울, 아산. 채용연계형 인턴(8주) 운영.
         </div>
       </div>
     </div>
@@ -880,8 +933,11 @@
             <div class="info-value">공인영어 <strong>1개 이상 보유 필수</strong> (점수 기준 직무별 상이)</div>
           </div>
           <div class="info-item">
-            <div class="info-label">비고</div>
-            <div class="info-value">사천/진주 근무. 보안 신원조회 필수.</div>
+            <div class="info-label">연봉 / 근무지</div>
+            <div class="info-value">
+              초봉 <strong>~7,000만</strong> / 평균 <strong>~11,000만</strong><br>
+              근무지: <strong>사천</strong>(메인), 서울 강남. 보안 신원조회 필수. 전문연구요원 가능.
+            </div>
           </div>
           <div class="info-item full">
             <div class="info-label">모집 직무 (12개 부서)</div>
@@ -922,8 +978,11 @@
             <div class="info-value">현대그룹 공통 TOEIC <strong>700+</strong> 추정</div>
           </div>
           <div class="info-item">
-            <div class="info-label">채용 전형</div>
-            <div class="info-value">서류 &rarr; Job Fitness Test(인성/역량 + <strong>코딩테스트</strong>) &rarr; 면접</div>
+            <div class="info-label">채용 전형 / 연봉</div>
+            <div class="info-value">
+              서류 &rarr; Job Fitness Test(인성+역량+<strong>코딩테스트</strong>) &rarr; 1차면접 &rarr; 2차면접<br>
+              초봉 <strong>~5,000~5,300만</strong>. 근무지: <strong>창원</strong>
+            </div>
           </div>
           <div class="info-item full">
             <div class="info-label">AI/SW 직무</div>
@@ -994,7 +1053,10 @@
           </div>
           <div class="info-item full">
             <div class="info-label">비고</div>
-            <div class="info-value">현대차 IT 계열사. 클라우드, 커넥티드카 플랫폼. 도메인 다름.</div>
+            <div class="info-value">
+              현대차 IT 계열사. 클라우드, 커넥티드카 플랫폼. 도메인 다름.<br>
+              초봉 <strong>~5,100만</strong> / 평균 <strong>~10,100만</strong>.
+            </div>
           </div>
         </div>
       </div>
@@ -1019,8 +1081,11 @@
             <div class="info-value">별도 어학 기준 <strong>없음 추정</strong>. 기술 역량 중심.</div>
           </div>
           <div class="info-item">
-            <div class="info-label">채용 전형</div>
-            <div class="info-value">서류 &rarr; <strong>코딩테스트</strong> &rarr; 1차면접 &rarr; 2차면접</div>
+            <div class="info-label">채용 전형 / 연봉</div>
+            <div class="info-value">
+              서류 &rarr; <strong>코딩테스트</strong> &rarr; 1차면접 &rarr; 2차면접<br>
+              초봉 <strong>~4,000만</strong> / 평균 <strong>~7,000만</strong>. 근무지: <strong>판교</strong>
+            </div>
           </div>
           <div class="info-item full">
             <div class="info-label">모집 직무 (10개)</div>
@@ -1180,15 +1245,15 @@
         <div class="info-grid">
           <div class="info-item full">
             <div class="info-value" style="font-size: 0.85rem; line-height: 2;">
-              <strong style="color:#ffc857;">한화시스템 방산</strong> — ICT처럼 토스/OPIc 필수인지, 토익도 되는지 확인 필요<br>
-              <strong style="color:#ffc857;">한컴인텔리전스</strong> — 어학 기준 자체가 있는지, 있다면 토익/토스/오픽 중 뭘 보는지<br>
-              <strong style="color:#ffc857;">퍼스텍</strong> — 중견이라 어학 없을 수도 있음. 공고에서 확인<br>
-              <strong style="color:#ffc857;">쎄트렉아이</strong> — SI Future-Ship 공고에 어학 언급 없었음. 다음 공고에서 재확인<br>
-              <strong style="color:#ffc857;">한화비전</strong> — 한화그룹 공통 토스/OPIc 추정이지만 핵심인재 전형은 다를 수 있음<br>
-              <strong style="color:#ffc857;">한화엔진</strong> — 한화그룹 공통 추정. SW 채용 자체가 작아서 공고 안 뜰 수도<br>
-              <strong style="color:#ffc857;">현대로템</strong> — TOEIC 700+ 추정. 2026 하반기 공고에서 정확한 기준 확인<br>
-              <strong style="color:#ffc857;">현대오토에버</strong> — 현대그룹 공통 추정. 토스/OPIc도 되는지 확인<br>
-              <strong style="color:#ffc857;">두산에너빌리티</strong> — Global Talent 전형 어학 기준 확인
+              <span style="color:#166534;">&#10003; 한화시스템 방산</span> — <strong>확인됨!</strong> 토스 또는 OPIc 보유 필수, 최소점수 없음<br>
+              <strong style="color:#b45309;">한컴인텔리전스</strong> — 어학 기준 자체가 있는지 미확인. 직원 ~106명 소규모라 공고 자체가 드묾<br>
+              <strong style="color:#b45309;">퍼스텍</strong> — 2024 신입공채에서도 어학 기준 미공개. 정처기 등 자격증 우대 가능성<br>
+              <strong style="color:#b45309;">쎄트렉아이</strong> — SI Future-Ship 공고에 어학 언급 없음. 기술면접 중심 추정<br>
+              <strong style="color:#b45309;">한화비전</strong> — 한화그룹 공통 토스/OPIc 추정이지만 핵심인재 전형은 다를 수 있음<br>
+              <strong style="color:#b45309;">한화엔진</strong> — 한화그룹 공통 추정. SW 채용 자체가 작아서 공고 안 뜰 수도<br>
+              <strong style="color:#b45309;">현대로템</strong> — TOEIC 700+ 추정. 2026 하반기 공고에서 정확한 기준 확인<br>
+              <strong style="color:#b45309;">현대오토에버</strong> — 현대그룹 공통 추정. 토스/OPIc도 되는지 확인<br>
+              <strong style="color:#b45309;">두산에너빌리티</strong> — Global Talent 전형 어학 기준 확인
             </div>
           </div>
         </div>
@@ -1206,12 +1271,12 @@
         <div class="info-grid">
           <div class="info-item full">
             <div class="info-value" style="font-size: 0.85rem; line-height: 2;">
-              <strong style="color:#bb86fc;">한화오션 AX</strong> — 면접 중심인 걸로 보이지만, AI 직군에 코테 추가될 수 있음<br>
-              <strong style="color:#bb86fc;">한컴인텔리전스</strong> — 공고 자체가 드물어서 전형 절차 정보 부족<br>
-              <strong style="color:#bb86fc;">퍼스텍</strong> — 2024년 신입 공채에서 연구개발 SW 모집 있었으나 코테 여부 불명<br>
-              <strong style="color:#bb86fc;">쎄트렉아이</strong> — 기술면접 중심 추정이지만 SW 직군 코테 가능성<br>
-              <strong style="color:#bb86fc;">대한항공</strong> — IT 직군 코테 여부 미확인<br>
-              <strong style="color:#bb86fc;">한화엔진</strong> — SW 채용 자체가 소규모라 정보 부족
+              <strong style="color:#5b21b6;">한화오션 AX</strong> — 면접 중심인 걸로 보이지만, AI 직군에 코테 추가될 수 있음<br>
+              <strong style="color:#5b21b6;">한컴인텔리전스</strong> — 공고 자체가 드물어서 전형 절차 정보 부족<br>
+              <strong style="color:#5b21b6;">퍼스텍</strong> — 2024년 신입 공채에서 연구개발 SW 모집 있었으나 코테 여부 불명<br>
+              <strong style="color:#5b21b6;">쎄트렉아이</strong> — 기술면접 중심 추정이지만 SW 직군 코테 가능성<br>
+              <strong style="color:#5b21b6;">대한항공</strong> — IT 직군 코테 여부 미확인<br>
+              <strong style="color:#5b21b6;">한화엔진</strong> — SW 채용 자체가 소규모라 정보 부족
             </div>
           </div>
         </div>
@@ -1229,11 +1294,11 @@
         <div class="info-grid">
           <div class="info-item full">
             <div class="info-value" style="font-size: 0.85rem; line-height: 2;">
-              <strong style="color:#64ffda;">LIG넥스원</strong> — 리쿠르팅북에서 AI 부서 vs 레이다 SW 부서 직무 차이 확인. 어느 부서가 내 경험에 더 맞는지 판단<br>
-              <strong style="color:#64ffda;">한화시스템 방산</strong> — "AI/빅데이터 기반 IT시스템 개발"이 구체적으로 뭘 하는지. 감시정찰 AI vs 내부 IT인지 구분<br>
-              <strong style="color:#64ffda;">한컴인텔리전스</strong> — 어떤 직무로 뽑는지 자체가 미확인. 홈페이지/잡코리아 수시 모니터링 필요<br>
-              <strong style="color:#64ffda;">쎄트렉아이</strong> — "SW-방산부문"이 위성 영상 AI인지 임베디드인지 확인. 학사 모집은 임베디드/테스트로 제한될 수 있음<br>
-              <strong style="color:#64ffda;">현대로템</strong> — "AI Engineer (디펜스솔루션)"이 실제로 뭘 하는지. 채용 규모가 1~2명일 수 있음
+              <strong style="color:#166534;">LIG넥스원</strong> — 리쿠르팅북에서 AI 부서 vs 레이다 SW 부서 직무 차이 확인. 어느 부서가 내 경험에 더 맞는지 판단<br>
+              <strong style="color:#166534;">한화시스템 방산</strong> — "AI/빅데이터 기반 IT시스템 개발"이 구체적으로 뭘 하는지. 감시정찰 AI vs 내부 IT인지 구분<br>
+              <strong style="color:#166534;">한컴인텔리전스</strong> — 어떤 직무로 뽑는지 자체가 미확인. 홈페이지/잡코리아 수시 모니터링 필요<br>
+              <strong style="color:#166534;">쎄트렉아이</strong> — "SW-방산부문"이 위성 영상 AI인지 임베디드인지 확인. 학사 모집은 임베디드/테스트로 제한될 수 있음<br>
+              <strong style="color:#166534;">현대로템</strong> — "AI Engineer (디펜스솔루션)"이 실제로 뭘 하는지. 채용 규모가 1~2명일 수 있음
             </div>
           </div>
         </div>
@@ -1244,7 +1309,7 @@
     <div class="company-card">
       <div class="card-header">
         <div class="card-header-left">
-          <span class="company-name" style="color: #e6f1ff;">시기별 액션 아이템</span>
+          <span class="company-name" style="color: #1a1a1a;">시기별 액션 아이템</span>
         </div>
       </div>
       <div class="card-body">
@@ -1300,20 +1365,20 @@
     <div class="company-card">
       <div class="card-header">
         <div class="card-header-left">
-          <span class="company-name" style="color: #ff6b6b;">이 문서에서 아직 빠진 정보</span>
+          <span class="company-name" style="color: #dc2626;">이 문서에서 아직 빠진 정보</span>
         </div>
       </div>
       <div class="card-body">
         <div class="info-grid">
           <div class="info-item full">
             <div class="info-value" style="font-size: 0.85rem; line-height: 2.2;">
-              &#9744; <strong>연봉 정보</strong> — LIG넥스원, 한화시스템, 한화오션, 한컴인텔리전스 등 대부분 미기재. 잡플래닛/블라인드에서 신입 초봉 확인 필요<br>
-              &#9744; <strong>근무지</strong> — 한화오션(서울) 확인됨. 나머지 기업별 근무지 (판교/용인/대전/사천 등) 정리 필요<br>
-              &#9744; <strong>전문연구요원</strong> — 석사 진학 시 전문연 가능 기업 표시. LIG넥스원/KAI 등은 전문연 있음<br>
-              &#9744; <strong>인턴십</strong> — 채용연계형 인턴 운영 여부. 한화에어로(8주 인턴) 확인됨. 나머지 기업도 정리 필요<br>
-              &#9744; <strong>면접 유형</strong> — 기술면접/인성면접/PT면접/토론면접 등 기업별 면접 구성<br>
-              &#9744; <strong>실제 합격 스펙</strong> — 잡플래닛/블라인드 합격 후기 기반 현실적인 컷라인<br>
-              &#9744; <strong>기업 최근 이슈</strong> — 실적/수주/사업 확장 등 자소서/면접에 활용할 최신 뉴스
+              <span style="color:#166534;">&#10003; <strong>연봉 정보</strong></span> — 대부분 확인 완료. <span style="color:#b45309;">한컴인텔리전스만 데이터 부족</span> (잡플래닛 1건, 평균 3,120만 — 신뢰도 낮음)<br>
+              <span style="color:#166534;">&#10003; <strong>근무지</strong></span> — 대부분 확인. <span style="color:#b45309;">한컴인텔리전스, 퍼스텍, 현대오토에버</span> 미확인<br>
+              <span style="color:#166534;">&#10003; <strong>면접 유형</strong></span> — LIG넥스원(PT+임원), 한화시스템(기술+인성), 한화오션(AI+영어+PT) 확인. <span style="color:#b45309;">나머지 기업은 잡플래닛 후기에서 추가 확인 필요</span><br>
+              <span style="color:#166534;">&#10003; <strong>전문연구요원</strong></span> — LIG넥스원(O), KAI(O) 확인. <span style="color:#b45309;">한화시스템/한컴인텔리전스/퍼스텍 전문연 여부 미확인</span><br>
+              &#9744; <strong>인턴십</strong> — 한화에어로(8주), LIG넥스원(채용연계형) 확인. <span style="color:#b45309;">나머지 기업 인턴 전형 여부 확인 필요</span><br>
+              &#9744; <strong>실제 합격 스펙</strong> — 잡플래닛/블라인드 합격 후기 기반 현실적인 컷라인. <strong>11월 자소서 시즌 전에 정리</strong><br>
+              &#9744; <strong>기업 최근 이슈</strong> — 실적/수주/사업 확장 등 자소서/면접에 활용할 최신 뉴스. <strong>면접 직전에 정리</strong>
             </div>
           </div>
         </div>
